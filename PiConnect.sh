@@ -46,4 +46,6 @@ echo Connecting to Raspberry Pi and set gateway to host,
 echo Please enter password of RPi\'s user \'pi\' next
 echo ---------------------------------------------------
 #echo ssh pi@raspberrypi.local -t \"sudo route add default gw ${LocalRPiIp}\"
-ssh pi@raspberrypi.local -t "sudo route add default gw ${LocalRPiIp}"
+#ssh pi@raspberrypi.local -t "sudo route add default gw ${LocalRPiIp}"
+# If DHCP is enabled route must not be set
+ssh -X pi@raspberrypi.local
