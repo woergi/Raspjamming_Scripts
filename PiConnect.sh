@@ -11,7 +11,7 @@ fi
 echo
 
 echo Detecting connected network devices...
-for connection in $(nmcli d | egrep "connected|verbunden" | awk '{print $1;}') 
+for connection in $(nmcli d | egrep "  connected|  verbunden" | awk '{print $1;}') 
 do
   echo -n Probing connection ${connection}...
   if [ $(ifconfig ${connection} | grep 01:02:03:04: | wc -l) -gt 0 ]
